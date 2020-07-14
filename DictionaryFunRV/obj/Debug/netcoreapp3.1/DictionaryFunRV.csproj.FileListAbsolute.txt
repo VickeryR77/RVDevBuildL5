@@ -1,0 +1,13 @@
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\obj\Debug\netcoreapp3.1\DictionaryFunRV.csprojAssemblyReference.cache
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\obj\Debug\netcoreapp3.1\DictionaryFunRV.AssemblyInfoInputs.cache
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\obj\Debug\netcoreapp3.1\DictionaryFunRV.AssemblyInfo.cs
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\obj\Debug\netcoreapp3.1\DictionaryFunRV.csproj.CoreCompileInputs.cache
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\bin\Debug\netcoreapp3.1\DictionaryFunRV.exe
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\bin\Debug\netcoreapp3.1\DictionaryFunRV.deps.json
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\bin\Debug\netcoreapp3.1\DictionaryFunRV.runtimeconfig.json
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\bin\Debug\netcoreapp3.1\DictionaryFunRV.runtimeconfig.dev.json
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\bin\Debug\netcoreapp3.1\DictionaryFunRV.dll
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\bin\Debug\netcoreapp3.1\DictionaryFunRV.pdb
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\obj\Debug\netcoreapp3.1\DictionaryFunRV.dll
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\obj\Debug\netcoreapp3.1\DictionaryFunRV.pdb
+C:\Users\RVICKERY\source\repos\DictionaryFunRV\obj\Debug\netcoreapp3.1\DictionaryFunRV.genruntimeconfig.cache
