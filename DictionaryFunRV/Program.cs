@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace DictionaryFunRV
 {
@@ -62,7 +63,11 @@ namespace DictionaryFunRV
             bool running = true;
             while (running)
             {
-                //Header.
+                bool stillRunning = true;
+                while (stillRunning)
+                {
+                
+                    //Header.
                 Console.WriteLine("Welcome to the grocery store! We have groceries!");
                 Console.WriteLine("Item  | Price");
                 Console.WriteLine("=============");
@@ -86,8 +91,10 @@ namespace DictionaryFunRV
                 //Instructions for the user.
                 Console.WriteLine("");
                 Console.WriteLine("What would you like to purchase?"); 
-                Console.WriteLine("Type an item from the menu, or DONE when ready to check out.)");
+                Console.WriteLine("Type an item from the menu to add to your cart.");
+                Console.WriteLine("");
 
+                    
                     //Get input from user.
                     string answer = Console.ReadLine();
                     string lowerAnswer = answer.ToLower();
@@ -97,93 +104,78 @@ namespace DictionaryFunRV
                     {
                         itemName.Add("Apple");
                         itemPrice.Add(1.99);
+
                         Console.Clear();
+                        Console.WriteLine("An apple was added to your cart for the price of $1.99.");
+                        Console.WriteLine("");
+                        
                     }
                     else if (lowerAnswer == "orange")
                     {
-                    itemName.Add("Orange");
-                    itemPrice.Add(0.99);
-                    Console.Clear();
+                        itemName.Add("Orange");
+                        itemPrice.Add(0.99);
+
+                        Console.Clear();
+                        Console.WriteLine("An orange was added to your cart for the price of $0.99.");
+                        Console.WriteLine("");
+                        
                     }
                     else if (lowerAnswer == "grape")
                     {
-                    itemName.Add("Grape Bundle");
-                    itemPrice.Add(2.99);
-                    Console.Clear();
+                        itemName.Add("Grape Bundle");
+                        itemPrice.Add(2.99);
+
+                        Console.Clear();
+                        Console.WriteLine("A grape bundle was added to your cart for the price of $2.99.");
+                        Console.WriteLine("");
+                        
                     }
                     else if (lowerAnswer == "mango")
                     {
-                    itemName.Add("Mango");
-                    itemPrice.Add(1.99);
-                    Console.Clear();
+                        itemName.Add("Mango");
+                        itemPrice.Add(1.99);
+
+                        Console.Clear();
+                        Console.WriteLine("A mango was added to your cart for the price of $1.99.");
+                        Console.WriteLine("");
+                        
                     }
                     else if (lowerAnswer == "lime")
                     {
-                    itemName.Add("Lime");
-                    itemPrice.Add(3.99);
-                    Console.Clear();
+                        itemName.Add("Lime");
+                        itemPrice.Add(3.99);
+
+                        Console.Clear();
+                        Console.WriteLine("A lime was added to your cart for the price of $3.99.");
+                        Console.WriteLine("");
+                        
                     }
                     else if (lowerAnswer == "kiwi")
                     {
-                    itemName.Add("Kiwi");
-                    itemPrice.Add(3.55);
-                    Console.Clear();
+                        itemName.Add("Kiwi");
+                        itemPrice.Add(3.55);
+
+                        Console.Clear();
+                        Console.WriteLine("A kiwi was added to your cart for the price of $3.55.");
+                        Console.WriteLine("");
                     }
                     else if (lowerAnswer == "lemon")
                     {
-                    itemName.Add("Lemon");
-                    itemPrice.Add(2.25);
-                    Console.Clear();
+                        itemName.Add("Lemon");
+                        itemPrice.Add(2.25);
+
+                        Console.Clear();
+                        Console.WriteLine("A lemon was added to your cart for the price of $2.25.");
+                        Console.WriteLine("");
                     }
                     else if (lowerAnswer == "lychee")
                     {
-                    itemName.Add("Lychee");
-                    itemPrice.Add(4.99);
-                    Console.Clear();
-                    }
-                    else if (lowerAnswer == "done")
-                    {
-                    //Begin the maths.
-                    Console.Clear();
-                    for (int i = 0; i < itemName.Count; i++)
-                    {
-                        Console.WriteLine($"{itemName[i]}  ${itemPrice[i]}");
-                        cartTotal += (double)itemPrice[i];
-                        cartAverage = cartTotal / itemName.Count;
-                    }
+                        itemName.Add("Lychee");
+                        itemPrice.Add(4.99);
 
-                    //The beginning of the end!
-                    bool runningEnd = true;
-                    while (runningEnd)
-                    {
+                        Console.Clear();
+                        Console.WriteLine("A lychee was added to your cart for the price of $4.99.");
                         Console.WriteLine("");
-                        Console.WriteLine($"Total owed: ${cartTotal:N2}");
-                        Console.WriteLine($"The average price per item is: ${cartAverage:N2}");
-
-                        Console.WriteLine("");
-                        Console.WriteLine("Would you like to continue shopping? (Y/N)");
-                        string again = Console.ReadLine();
-                        string lowerAgain = again.ToLower();
-                        if (lowerAgain == "no" || lowerAgain == "n")
-                        {
-                            running = false;
-                            break;//kill code
-                        }
-                        else if(lowerAgain == "yes" || lowerAgain == "y")
-                        {
-                            //Setup for arraylist resets for totals to continue providing accurate numbers.
-                            cartTotal = 0;
-                            cartAverage = 0;
-                            Console.Clear();
-                            break;//works to head back to cart.
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Sorry, I didn't quite catch that.");
-                            continue;
-                        }
-                    }  
                     }
                     else
                     {
@@ -192,6 +184,48 @@ namespace DictionaryFunRV
                         Console.WriteLine("");
                         continue;
                     }
+
+                    bool endRunning = true;
+                    while (endRunning) {
+                        Console.WriteLine("Would you like to continue shopping? (Y/N)");
+                        string stillAnswer = Console.ReadLine();
+                        string lowerStillAnswer = stillAnswer.ToLower();
+
+                        if (lowerStillAnswer == "yes" || lowerStillAnswer == "y")
+                        {
+                            Console.Clear();
+                            running = true;
+                            break;
+                        }
+                        else if (lowerStillAnswer == "no" || lowerStillAnswer == "n")
+                        {
+                            Console.Clear();
+                            for (int i = 0; i < itemName.Count; i++)
+                            {
+                                Console.WriteLine($"{itemName[i]}  ${itemPrice[i]}");
+                                cartTotal += (double)itemPrice[i];
+                                cartAverage = cartTotal / itemName.Count;
+                            }
+
+                            Console.WriteLine("");
+                            Console.WriteLine($"Total owed: ${cartTotal:N2}");
+                            Console.WriteLine($"The average price per item is: ${cartAverage:N2}");
+                            Console.WriteLine("");
+                            Console.WriteLine("");
+
+                            Console.WriteLine("Press enter to finish the program.");
+                            Console.ReadLine();
+                            running = false;
+                            stillRunning = false;
+                            endRunning = false;
+                            break;
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
                 }
             }
         }
