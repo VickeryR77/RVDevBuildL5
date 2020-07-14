@@ -38,10 +38,13 @@ namespace DictionaryFunRV
             //Menu Dictionary, Two Array lists for other things.
 
 
+
+            //Dictionary and Two Arrays created.
             Dictionary<string, double> menu = new Dictionary<string, double>();
             ArrayList itemName = new ArrayList();
             ArrayList itemPrice = new ArrayList();
 
+            //Dictionary string menu items with their double prices displayed.
             menu["Apple  "] = 1.99;
             menu["Orange "] = 0.99;
             menu["Grape  "] = 2.99;
@@ -50,33 +53,46 @@ namespace DictionaryFunRV
             menu["Kiwi   "] = 3.55;
             menu["Lemon  "] = 2.25;
             menu["Lychee "] = 4.99;
+
+            //Setting up for the total and the average.
             double cartTotal = 0.00;
             double cartAverage = 0.00;
 
+            //Loop to run while the program is going.
             bool running = true;
             while (running)
             {
+                //Header.
                 Console.WriteLine("Welcome to the grocery store! We have groceries!");
                 Console.WriteLine("Item  | Price");
                 Console.WriteLine("=============");
+
+                //Display the menu.
                 foreach (KeyValuePair<string, double> item in menu)
                 {
                     Console.WriteLine($"{item.Key} ${item.Value}");
                 }
-                
+
+                //Footer to the menu, items added to cart will display below.
                 Console.WriteLine("");
                 Console.WriteLine("Currently in Cart:");
 
+                //Shows the items and prices of objects currently in the string and double listarrays.
                 for (int i = 0; i < itemName.Count; i++)
                 {
                     Console.WriteLine($"{itemName[i]}  ${itemPrice[i]}");
                 }
 
-                    Console.WriteLine("");
-                    Console.WriteLine("What would you like to purchase? (Type DONE when ready to check out.)");
+                //Instructions for the user.
+                Console.WriteLine("");
+                Console.WriteLine("What would you like to purchase?"); 
+                Console.WriteLine("Type an item from the menu, or DONE when ready to check out.)");
+
+                    //Get input from user.
                     string answer = Console.ReadLine();
                     string lowerAnswer = answer.ToLower();
 
+                    //If tree for adding strings or double values to their respective arraylists if the corresponding answer.ToLower() was typed in.
                     if (lowerAnswer == "apple")
                     {
                         itemName.Add("Apple");
@@ -127,15 +143,16 @@ namespace DictionaryFunRV
                     }
                     else if (lowerAnswer == "done")
                     {
+                    //Begin the maths.
                     Console.Clear();
                     for (int i = 0; i < itemName.Count; i++)
                     {
                         Console.WriteLine($"{itemName[i]}  ${itemPrice[i]}");
                         cartTotal += (double)itemPrice[i];
                         cartAverage = cartTotal / itemName.Count;
-
                     }
 
+                    //The beginning of the end!
                     bool runningEnd = true;
                     while (runningEnd)
                     {
@@ -154,6 +171,7 @@ namespace DictionaryFunRV
                         }
                         else if(lowerAgain == "yes" || lowerAgain == "y")
                         {
+                            //Setup for arraylist resets for totals to continue providing accurate numbers.
                             cartTotal = 0;
                             cartAverage = 0;
                             Console.Clear();
@@ -175,9 +193,6 @@ namespace DictionaryFunRV
                         continue;
                     }
                 }
-
-                //forloop sum for price average
-
             }
         }
     }
