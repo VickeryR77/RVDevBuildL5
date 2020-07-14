@@ -56,6 +56,7 @@ namespace DictionaryFunRV
             bool running = true;
             while (running)
             {
+                Console.WriteLine("Welcome to the grocery store! We have groceries!");
                 Console.WriteLine("Item  | Price");
                 Console.WriteLine("=============");
                 foreach (KeyValuePair<string, double> item in menu)
@@ -70,12 +71,6 @@ namespace DictionaryFunRV
                 {
                     Console.WriteLine($"{itemName[i]}  ${itemPrice[i]}");
                 }
-
-                for (int j = 0; j < itemPrice.Count; j++)
-                {
-                    
-                }
-                    //Shopping List?
 
                     Console.WriteLine("");
                     Console.WriteLine("What would you like to purchase? (Type DONE when ready to check out.)");
@@ -159,13 +154,15 @@ namespace DictionaryFunRV
                         }
                         else if(lowerAgain == "yes" || lowerAgain == "y")
                         {
+                            cartTotal = 0;
+                            cartAverage = 0;
                             Console.Clear();
                             break;//works to head back to cart.
                         }
                         else
                         {
                             Console.Clear();
-                            Console.WriteLine("Sorry, I didn't quite catch that. (Y/N)");
+                            Console.WriteLine("Sorry, I didn't quite catch that.");
                             continue;
                         }
                     }  
